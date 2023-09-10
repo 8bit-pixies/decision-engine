@@ -1,5 +1,7 @@
 # Decision Engine
 
+> :warning: this is alpha software and there are known bugs due to decision engine trying to dynamically evaluate things
+
 A configuration driven decision engine written in Rust with Python bindings. 
 
 Python usage:
