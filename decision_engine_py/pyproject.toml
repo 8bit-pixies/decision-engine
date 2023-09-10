@@ -1,0 +1,49 @@
+[build-system]
+requires = ["maturin>=1.2,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "decision_engine"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+
+[tool.maturin]
+features = ["pyo3/extension-module"]
+python-source = "python"
+
+[tool.poetry]
+name = "decision-engine"
+version = "0.1.0"
+description = ""
+authors = []
+packages = []
+
+[tool.poetry.dependencies]
+python = ">=3.8,<4.0"
+pydantic = ">=2.0.0"
+pytest = "*"
+polars = { version="*", extras=['pyarrow'] }
+pandas = "*"
+black = "*"
+ruff = "*"
+isort = "*"
+maturin = "0.14.15"
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.mccabe]
+max-complexity = 10
+
+[tool.black]
+line-length = 120
+target-version = ['py39']
+
+[tool.isort]
+profile = "black"
+line_length = 120
+include_trailing_comma = true

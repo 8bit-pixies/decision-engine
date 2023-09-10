@@ -1,0 +1,15 @@
+[package]
+name = "decision_engine_py"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "decision_engine"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = "0.19.2"
+decision_engine = { path = "../decision_engine" }
+polars = { version = "^0.32.0", features = ["lazy", "sql"]  }
+pyo3-polars = "0.6.0"

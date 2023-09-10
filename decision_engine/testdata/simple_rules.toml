@@ -1,0 +1,9 @@
+key = "key"
+
+[rule_config]
+default_action = "'high'"
+rules = [
+    ["score <= 80", "low"],
+    ["score <=100", "medium"],
+    ["score > 100", "high"],
+]

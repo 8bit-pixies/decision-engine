@@ -1,0 +1,17 @@
+[package]
+name = "decision_engine"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+polars = { version = "^0.32.0", features = ["lazy", "sql"]  }
+serde = { version = "1.0.188", features = ["derive"] }
+serde_json = "1.0.106"
+test-case = "3.1.0"
+thiserror = "1.0.48"
+toml = "0.7.8"
+
+[dev-dependencies]
+test-case = "3.0.0"

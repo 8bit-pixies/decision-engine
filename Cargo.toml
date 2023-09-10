@@ -1,0 +1,2 @@
+[workspace]
+members = ["decision_engine", "decision_engine_py"]
