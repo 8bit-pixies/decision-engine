@@ -31,6 +31,35 @@ print(decision_engine.transform(dataframe))
 # 2    high
 ```
 
+This also works with multiple conditions, whereby it takes the first one which is "true". 
+
+```py
+import pandas as pd
+from decision_engine.engine import DecisionEngine
+
+decision_engine = DecisionEngine.model_validate(
+    {
+        "config": {
+            "key": "action",
+            "default_action": "high",
+            "rules": [
+                ["override", "'override'"],
+                ["not override and score < 100", "low"],
+                ["score >= 100", "high"],
+            ],
+        },
+    }
+)
+
+
+dataframe = pd.DataFrame({"score": [0.0, 85, 100], "override": [True, False, False]})
+print(decision_engine.transform(dataframe))
+#         action
+#  0  'override'
+#  1         low
+#  2        high
+```
+
 ## Developer Notes
 
 From a development perspective the Rust and Python bindings are kept in two separate crates:
